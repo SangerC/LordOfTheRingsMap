@@ -18,6 +18,8 @@ class Node{
 class Path{
     int Distance
     AcceptableMethods[]
+    Node0
+    Node1
     Line
     draw()
 }
@@ -26,4 +28,6 @@ Main -> WindowFrame
 Main -> Graph
 Graph -> "*" Node
 Node -> "*" Path
+WindowFrame ..> Node
+WindowFrame ..> Path
 @enduml
