@@ -1,12 +1,29 @@
 @startuml
 
 class Main{
-
+    handleFindPath(Start, End, Methods, Cost)
 }
-class GameFrame{
-
+class WindowFrame{
+    Image
+}
+class Graph{
+    findPath(Start, End, Methods, Cost)
+}
+class Node{
+    int X, Y
+    String Name
+    Type
+    draw()
+}
+class Path{
+    int Distance
+    AcceptableMethods[]
+    Line
+    draw()
 }
 
-
-
+Main -> WindowFrame
+Main -> Graph
+Graph -> "*" Node
+Node -> "*" Path
 @enduml
