@@ -1,6 +1,15 @@
-
 public class Main {
+	
+	Graph graph;
+	WindowFrame windowFrame;
+	
+	public static void main(String[] args) {
 
+	}
+	
+	
+	
+	
 }
 //
 
