@@ -1,8 +1,9 @@
-public class Path {
+import java.util.ArrayList;
 
-	public enum Mode {WALKING, HORSE, BOAT};
-	int distance;
+public class Path {
 	
+	int distance;
+	ArrayList<Graph.Mode> modes;
 	
 	
 	
