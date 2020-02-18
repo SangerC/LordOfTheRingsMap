@@ -18,7 +18,16 @@ public class Graph {
 	
 	public ArrayList<Path> findShortestPath(Node n, ArrayList<Mode> modes, Cost cost){
 		WorkingNode wn = new WorkingNode(n);
+		wn.cost=0;
+		wn.known=true;
 		
+		ArrayList<Workin>
+		WorkingNode closest;
+		for(){
+			
+			
+			
+		}
 		
 		
 		
@@ -26,14 +35,14 @@ public class Graph {
 	
 	private class WorkingNode{
 		
-		private Boolean found;
+		private Boolean known;
 		private int cost;
 		private ArrayList<Path> shortestPath;
 		private Node n;
 		
 		public WorkingNode(Node node) {
 			n = node;
-			found=false;
+			known=false;
 			shortestPath = new ArrayList<Path>();
 		}
 	}

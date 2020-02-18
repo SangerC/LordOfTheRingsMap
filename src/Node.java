@@ -7,7 +7,7 @@ public class Node {
 	Integer x;
 	Integer y;
 
-	HashMap<Node, Path> paths;
+	ArrayList<Path> paths;
 	ArrayList<Node> nodes;
 
 	public Node(String name, int x, int y) {
@@ -15,7 +15,7 @@ public class Node {
 		this.x = x;
 		this.y = y;
 		this.nodes = new ArrayList<Node>();
-		this.paths = new HashMap<Node, Path>();
+		this.paths = new ArrayList<Path>();
 	}
 
 	public void addNode(Node n) {
