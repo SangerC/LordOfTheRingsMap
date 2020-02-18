@@ -8,6 +8,10 @@ public class Node {
 
 	ArrayList<Path> paths;
 	ArrayList<Node> nodes;
+	
+	public Boolean known;
+	public int cost;
+	public ArrayList<Path> shortestPath;
 
 	public Node(String name, int x, int y) {
 		this.name = name;
@@ -15,6 +19,8 @@ public class Node {
 		this.y = y;
 		this.nodes = new ArrayList<Node>();
 		this.paths = new ArrayList<Path>();
+		this.cost = -1;
+		this.known=false;
 	}
 
 	public void addNode(Node n) {
