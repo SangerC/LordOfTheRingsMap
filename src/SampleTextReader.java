@@ -20,7 +20,7 @@ public class SampleTextReader {
 		String line;
 		StringTokenizer st;
 		boolean hasMoreLines = true;
-		// reads lines of type: <process number> <IP address> <port>
+		
 		while (hasMoreLines) {
 			try {
 				line = reader.readLine();
@@ -32,8 +32,10 @@ public class SampleTextReader {
 					continue;
 				}
 				String string1 = st.nextToken();
-				int num2 = Integer.parseInt(st.nextToken());
-				int num3 = Integer.parseInt(st.nextToken());
+				int x = Integer.parseInt(st.nextToken());
+				int y = Integer.parseInt(st.nextToken());
+				//Node n = new Node(name, x, y);
+				//lsit.add(n);
 
 			} catch (IOException e) {
 				hasMoreLines = false;
