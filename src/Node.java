@@ -1,5 +1,6 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Node {
 
@@ -7,15 +8,21 @@ public class Node {
 	Integer x;
 	Integer y;
 
-	HashMap<Node, Path> paths;
+	ArrayList<Path> paths;
 	ArrayList<Node> nodes;
+	
+	public Boolean known;
+	public int cost;
+	public ArrayList<Path> shortestPath;
 
 	public Node(String name, int x, int y) {
 		this.name = name;
 		this.x = x;
 		this.y = y;
 		this.nodes = new ArrayList<Node>();
-		this.paths = new HashMap<Node, Path>();
+		this.paths = new ArrayList<Path>();
+		this.cost = -1;
+		this.known=false;
 	}
 
 	public void addNode(Node n) {
@@ -26,5 +33,17 @@ public class Node {
 	public Boolean checkConnect(Node n) {
 		return (this.nodes.contains(n));
 	}
-
+	
+	public void drawOn(Graphics2D g) {
+		g.setColor(Color.BLACK);
+		g.fillOval(this.x, this.y, 25, 25);
+	}
+	
+	public int getX() {
+		return this.x;
+	}
+	
+	public int getY() {
+		return this.y;
+	}
 }
