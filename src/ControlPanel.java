@@ -23,8 +23,9 @@ public class ControlPanel extends JPanel {
 	private JLabel locLabel;
 	private JLabel destLabel;
 	private JLabel tdLabel;
+	private Graph graph;
 	
-	public ControlPanel() {
+	public ControlPanel(Graph graph) {
 		this.addTextFieldsAndLabels();
 		this.addCheckBoxes();
 		this.addComboBoxAndItsItems();
@@ -84,6 +85,9 @@ public class ControlPanel extends JPanel {
 					}
 					else {
 						System.out.println(locText + " => " + destText);
+						//TODO:
+//						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), 
+//								Graph.Mode.WALKING, Graph.Cost.TIME);
 						if(walk.isSelected()) {
 							System.out.println("The long way 'round.");
 						}

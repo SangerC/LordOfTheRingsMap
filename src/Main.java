@@ -13,7 +13,7 @@ public class Main {
 	
 	public Main() {
 		this.graph = new Graph();
-		this.windowFrame = new WindowFrame(graph.path);
+		this.windowFrame = new WindowFrame(graph);
 	}
 	
 	public void addGraphElement() {
@@ -115,7 +115,7 @@ public class Main {
 		
 		Main main = new Main();
 		main.addGraphElement();
-		main.graph.print();
+//		main.graph.print();
 		
 	}
 	
