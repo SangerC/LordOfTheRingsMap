@@ -36,6 +36,16 @@ public class MapPanel extends JPanel{
 			e.printStackTrace();
 		}
 		Graphics2D g2 = (Graphics2D) g;
+		
+		for(int i=0; i<this.path.size(); i++) {
+			//Node node1 = this.map.getNodes().get(i);
+			//Node node2 = this.map.getNodes().get(i+1);
+			g2.setColor(Color.BLUE);
+			g2.setStroke(new BasicStroke(3));
+			//g2.drawLine(node1.getX()+9, node1.getY()+9, node2.getX()+9, node2.getY()+9);
+			path.get(i).drawOn(g2);
+		}
+		
 		for(Node node : this.map.getNodes()) {
 			node.drawOn(g2);
 //			for(Node node2 : this.map.getNodes()) {
@@ -44,15 +54,6 @@ public class MapPanel extends JPanel{
 //					g2.drawLine(node.getX()+12, node.getY()+12, node2.getX()+12, node2.getY()+12);
 //				}
 //			}
-		}
-		for(int i=0; i<this.path.size(); i++) {
-			
-			//Node node1 = this.map.getNodes().get(i);
-			//Node node2 = this.map.getNodes().get(i+1);
-			g2.setColor(Color.BLUE);
-			g2.setStroke(new BasicStroke(3));
-			//g2.drawLine(node1.getX()+9, node1.getY()+9, node2.getX()+9, node2.getY()+9);
-			path.get(i).drawOn(g2);
 		}
 	}
 
