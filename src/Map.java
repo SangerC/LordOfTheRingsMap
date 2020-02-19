@@ -23,7 +23,7 @@ public class Map {
 			return;
 		}
 		while(scanner.hasNextLine()) {
-			this.nodes.add(new Node(null, scanner.nextInt(), scanner.nextInt()));
+			this.nodes.add(new Node(null, scanner.nextInt()-12, scanner.nextInt()-12));
 			if(!scanner.hasNextLine()) {
 				break;
 			}

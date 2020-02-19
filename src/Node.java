@@ -40,8 +40,8 @@ public class Node {
 	}
 	
 	public void drawOn(Graphics2D g) {
-		g.setColor(Color.BLACK);
-		g.fillOval(this.x, this.y, 25, 25);
+		g.setColor(Color.RED);
+		g.fillOval(this.x, this.y, 15, 15);
 	}
 	
 	public int getX() {

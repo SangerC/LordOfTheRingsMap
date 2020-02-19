@@ -3,7 +3,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class MapPanel extends JPanel{
@@ -22,6 +26,12 @@ public class MapPanel extends JPanel{
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		try {
+			BufferedImage img = ImageIO.read(new File("FullMEMap.jpeg"));
+			g.drawImage(img, 0, 0, 1536, 1280, null);
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
 		Graphics2D g2 = (Graphics2D) g;
 		for(Node node : this.map.getNodes()) {
 			node.drawOn(g2);
@@ -35,9 +45,9 @@ public class MapPanel extends JPanel{
 		for(int i=0; i<this.map.getNodes().size()-1; i++) {
 			Node node1 = this.map.getNodes().get(i);
 			Node node2 = this.map.getNodes().get(i+1);
-			g2.setColor(Color.RED);
+			g2.setColor(Color.BLUE);
 			g2.setStroke(new BasicStroke(3));
-			g2.drawLine(node1.getX()+12, node1.getY()+12, node2.getX()+12, node2.getY()+12);
+			g2.drawLine(node1.getX()+9, node1.getY()+9, node2.getX()+9, node2.getY()+9);
 		}
 	}
 
