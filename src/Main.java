@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -19,7 +18,7 @@ public class Main {
 	
 	public void addGraphElement() {
 		getNodesfromText();
-		//getEdgesfromText();
+		getEdgesfromText();
 
 	}
 	
@@ -43,8 +42,8 @@ public class Main {
 					break;
 				st = new StringTokenizer(line);
 				
-				int x = Integer.parseInt(st.nextToken());
-				int y = Integer.parseInt(st.nextToken());
+				int x = Integer.parseInt(st.nextToken()) - 12;
+				int y = Integer.parseInt(st.nextToken()) - 12;
 				String name = st.nextToken();
 				graph.nodes.put(name, new Node(name, x, y));
 
@@ -69,7 +68,7 @@ public class Main {
 		
 		BufferedReader reader = null;
 		try {
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream("src\\EdgeList.txt")));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream("EdgeList.txt")));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(0);
@@ -116,7 +115,7 @@ public class Main {
 		
 		Main main = new Main();
 		main.addGraphElement();
-//		main.graph.printN();
+		main.graph.print();
 	}
 	
 	

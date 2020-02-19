@@ -73,8 +73,9 @@ public class Graph {
 		else return distance*4;
 	}
 	
-	public void printN() {
+	public void print() {
 		System.out.println(this.nodes);
+		System.out.println(this.path);
 	}
 
 }

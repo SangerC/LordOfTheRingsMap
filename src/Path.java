@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 public class Path {
@@ -35,5 +37,14 @@ public class Path {
 		return null;
 	}
 
+	public void drawOn(Graphics2D g) {
+		if (this.modes.contains(Graph.Mode.BOAT)){
+			g.setColor(Color.BLUE);
+		} else {
+			g.setColor(Color.GREEN);
+		}
+		
+		g.drawLine(n1.getX(), n1.getY(), n2.getX(), n2.getY());
+	}
 	
 }
