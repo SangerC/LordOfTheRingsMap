@@ -21,7 +21,7 @@ public class WindowFrame extends JFrame{
 			//Create the panel that contains all the navigation controls
 			ControlPanel  controlPanel = new ControlPanel();
 			controlPanel.setLayout(new BoxLayout(controlPanel, BoxLayout.Y_AXIS));
-			controlPanel.setBackground(Color.GREEN);
+			controlPanel.setBackground(Color.LIGHT_GRAY);
 		
 			//Adding the panels to the frame and making the frame visible
 			this.getContentPane().add(BorderLayout.WEST, controlPanel);
