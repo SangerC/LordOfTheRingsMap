@@ -116,6 +116,7 @@ public class Main {
 		
 		Main main = new Main();
 		main.addGraphElement();
+//		main.graph.printN();
 	}
 	
 	

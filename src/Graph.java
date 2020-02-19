@@ -72,5 +72,9 @@ public class Graph {
 		if(mode==Mode.HORSE)return distance*2;
 		else return distance*4;
 	}
+	
+	public void printN() {
+		System.out.println(this.nodes);
+	}
 
 }
