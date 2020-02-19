@@ -18,8 +18,7 @@ public class Main {
 	}
 	
 	public void addGraphElement() {
-
-		//getNodesfromText();
+		getNodesfromText();
 		//getEdgesfromText();
 
 	}

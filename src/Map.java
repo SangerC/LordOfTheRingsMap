@@ -16,7 +16,7 @@ public class Map {
 	public void readFile() {
 		Scanner scanner = null;
 		try {
-			scanner = new Scanner(new File("src\\NodeList.txt"));
+			scanner = new Scanner(new File("NodeList.txt"));
 		}
 		catch(FileNotFoundException e){
 			System.out.println("File not found.");
