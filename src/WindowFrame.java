@@ -7,16 +7,17 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Point2D;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class WindowFrame extends JFrame{
 		
-	public WindowFrame() {	
+	public WindowFrame(ArrayList<Path> path) {	
 			//Create the JFrame that contains all components
 			this.setTitle("Google Middle Earth");
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 			//Create the panel that displays the map and its paths
-			MapPanel mapPanel = new MapPanel();
+			MapPanel mapPanel = new MapPanel(path);
 			
 			//Create the panel that contains all the navigation controls
 			ControlPanel  controlPanel = new ControlPanel();

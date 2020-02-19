@@ -44,7 +44,7 @@ public class Path {
 			g.setColor(Color.GREEN);
 		}
 		
-		g.drawLine(n1.getX(), n1.getY(), n2.getX(), n2.getY());
+		g.drawLine(n1.getX()+9, n1.getY()+9, n2.getX()+9, n2.getY()+9);
 	}
 	
 }

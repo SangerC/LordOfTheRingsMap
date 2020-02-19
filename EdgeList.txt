@@ -42,7 +42,6 @@ Inter2 Linhir Walk
 Inter2 Inter3 Walk
 Linhir Calembel Walk
 Calembel Erech Walk
-Calembel DolGuldur Boat
 Edhellond DolAmroth Boat
 Edhellond Erech Boat
 Inter3 MinasMorgul Walk

@@ -12,8 +12,8 @@ public class Main {
 	WindowFrame windowFrame;
 	
 	public Main() {
-		this.windowFrame = new WindowFrame();
 		this.graph = new Graph();
+		this.windowFrame = new WindowFrame(graph.path);
 	}
 	
 	public void addGraphElement() {

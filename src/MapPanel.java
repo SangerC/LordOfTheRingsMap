@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -13,9 +14,11 @@ import javax.swing.JPanel;
 public class MapPanel extends JPanel{
 	
 	private Map map;
+	private ArrayList<Path> path;
 
-	public MapPanel() {
+	public MapPanel(ArrayList<Path> path) {
 		this.map = new Map();
+		this.path = path;
 //		for(Node node : this.map.getNodes()) {
 //			this.add(node);
 //			node.setLocation(node.getX(), node.getY());
@@ -42,12 +45,14 @@ public class MapPanel extends JPanel{
 //				}
 //			}
 		}
-		for(int i=0; i<this.map.getNodes().size()-1; i++) {
-			Node node1 = this.map.getNodes().get(i);
-			Node node2 = this.map.getNodes().get(i+1);
+		for(int i=0; i<this.path.size(); i++) {
+			
+			//Node node1 = this.map.getNodes().get(i);
+			//Node node2 = this.map.getNodes().get(i+1);
 			g2.setColor(Color.BLUE);
 			g2.setStroke(new BasicStroke(3));
-			g2.drawLine(node1.getX()+9, node1.getY()+9, node2.getX()+9, node2.getY()+9);
+			//g2.drawLine(node1.getX()+9, node1.getY()+9, node2.getX()+9, node2.getY()+9);
+			path.get(i).drawOn(g2);
 		}
 	}
 
