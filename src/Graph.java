@@ -62,6 +62,9 @@ public class Graph {
 			nodes.get(s).known=false;
 			nodes.get(s).shortestPath=null;
 		}
+		for(int i = 0; i < wn.shortestPath.size(); i++) {
+			wn.shortestPath.get(i).setVisible();
+		}
 		return wn.shortestPath;
 	}
 	
