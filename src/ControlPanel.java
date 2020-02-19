@@ -47,9 +47,9 @@ public class ControlPanel extends JPanel {
 		this.walk = new JCheckBox("Walk");
 		this.horse = new JCheckBox("Horse");
 		this.boat = new JCheckBox("Boat");
-		this.walk.setBackground(Color.GREEN);
-		this.horse.setBackground(Color.GREEN);
-		this.boat.setBackground(Color.GREEN);
+		this.walk.setBackground(Color.LIGHT_GRAY);
+		this.horse.setBackground(Color.LIGHT_GRAY);
+		this.boat.setBackground(Color.LIGHT_GRAY);
 		ButtonGroup checkBoxGroup = new ButtonGroup();
 		checkBoxGroup.add(this.walk);
 		checkBoxGroup.add(this.horse);
