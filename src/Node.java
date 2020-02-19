@@ -29,6 +29,11 @@ public class Node {
 		nodes.add(n);
 //		this.paths.put(n, new Path(this, n));
 	}
+	
+	public void addConnection(Node n, Path p) {
+		this.nodes.add(n);
+		this.paths.add(p);
+	}
 
 	public Boolean checkConnect(Node n) {
 		return (this.nodes.contains(n));

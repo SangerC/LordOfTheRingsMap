@@ -3,6 +3,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
@@ -12,8 +13,6 @@ public class Main {
 	WindowFrame windowFrame;
 	
 	public void getNodesfromText() {
-		
-		HashMap<String, Node> nodes = new HashMap<String, Node>();
 		
 		BufferedReader reader = null;
 		try {
@@ -36,7 +35,7 @@ public class Main {
 				String name = st.nextToken();
 				int x = Integer.parseInt(st.nextToken());
 				int y = Integer.parseInt(st.nextToken());
-				nodes.put(name, new Node(name, x, y));
+				graph.nodes.put(name, new Node(name, x, y));
 
 			} catch (IOException e) {
 				hasMoreLines = false;
@@ -45,13 +44,62 @@ public class Main {
 			}
 		} // end of while
 		
-		getEdgesfromText(nodes, "EdgeList.txt");
+		getEdgesfromText("EdgeList.txt");
 	}
 	
 	
 	
-	public void getEdgesfromText(HashMap<String, Node> nodes, String filename) {
+	public void getEdgesfromText(String filename) {
 		
+		ArrayList<Graph.Mode> boat = new ArrayList<Graph.Mode>();
+		boat.add(Graph.Mode.BOAT);
+		
+		ArrayList<Graph.Mode> walk = new ArrayList<Graph.Mode>();
+		walk.add(Graph.Mode.WALKING);
+		walk.add(Graph.Mode.HORSE);
+		
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream("NodeList.txt")));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.exit(0);
+		}
+		String line;
+		StringTokenizer st;
+		boolean hasMoreLines = true;
+		
+		while (hasMoreLines) {
+			try {
+				line = reader.readLine();
+				if (line == null)
+					break;
+				st = new StringTokenizer(line);
+				
+				String nodeName1 = st.nextToken();
+				String nodeName2 = st.nextToken();
+				String mode = st.nextToken();
+				
+				Node n1 = graph.nodes.get(nodeName1);
+				Node n2 = graph.nodes.get(nodeName2);
+				Path p = null;
+				
+				if (mode.contentEquals("boat")) {
+					p = new Path(n1, n2, boat);
+				} else {
+					p = new Path(n1, n2, walk);
+				}
+				
+				graph.path.add(p);
+				n1.addConnection(n2, p);
+				n2.addConnection(n1, p);
+
+			} catch (IOException e) {
+				hasMoreLines = false;
+			} catch (NumberFormatException e) {
+				System.err.println(e.getMessage());
+			}
+		} // end of while
 	}
 	
 	public static void main(String[] args) {
