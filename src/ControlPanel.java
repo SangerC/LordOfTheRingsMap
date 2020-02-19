@@ -97,4 +97,5 @@ public class ControlPanel extends JPanel {
 		this.add(go);
 		this.add(Box.createVerticalStrut(100));
 	}
+	
 }

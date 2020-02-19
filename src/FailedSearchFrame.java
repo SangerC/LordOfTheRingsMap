@@ -51,6 +51,7 @@ public class FailedSearchFrame extends JFrame {
 				}
 			}
 		});
+		
 		panel.add(Box.createVerticalStrut(25));
 		panel.add(message, BorderLayout.CENTER);
 		panel.add(Box.createVerticalStrut(25));
