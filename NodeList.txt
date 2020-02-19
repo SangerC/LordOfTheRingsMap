@@ -6,7 +6,7 @@
 1023 225 TheLonelyMontain
 790 162 MountGundabad
 708 212 MountGram
-970 273 MountainsOfMirkwood
+970 273 MountOfMirkwood
 520 254 Fornost
 430 260 Annuminas
 186 310 Forlond

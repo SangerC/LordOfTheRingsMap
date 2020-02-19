@@ -92,7 +92,7 @@ public class Main {
 				Node n2 = graph.nodes.get(nodeName2);
 				Path p = null;
 				
-				if (mode.contentEquals("boat")) {
+				if (mode.contentEquals("Boat")) {
 					p = new Path(n1, n2, boat);
 				} else {
 					p = new Path(n1, n2, walk);
