@@ -19,7 +19,7 @@ public class Main {
 	
 	public void addGraphElement() {
 		getNodesfromText();
-		getEdgesfromText();
+//		getEdgesfromText();
 	}
 	
 	public void getNodesfromText() {
@@ -42,9 +42,9 @@ public class Main {
 					break;
 				st = new StringTokenizer(line);
 				
-				String name = st.nextToken();
 				int x = Integer.parseInt(st.nextToken());
 				int y = Integer.parseInt(st.nextToken());
+				String name = st.nextToken();
 				graph.nodes.put(name, new Node(name, x, y));
 
 			} catch (IOException e) {
@@ -68,7 +68,7 @@ public class Main {
 		
 		BufferedReader reader = null;
 		try {
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream("EdgeList.txt")));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream("src\\EdgeList.txt")));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(0);

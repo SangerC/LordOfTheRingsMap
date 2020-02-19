@@ -8,7 +8,10 @@ public class Graph {
 	public enum Cost {TIME, DISTANCE};
 	public enum Mode {WALKING, HORSE, BOAT};
 	
-	
+	public Graph() {
+		this.nodes = new HashMap<String, Node>();
+		this.path = new ArrayList<Path>();
+	}
 	
 	
 	
