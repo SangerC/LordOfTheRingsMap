@@ -79,7 +79,8 @@ public class ControlPanel extends JPanel {
 				String destText = destination.getText();
 				if(e.getSource()==go) {
 					if(location.getText().isEmpty() || destination.getText().isEmpty()) {
-						System.out.println("Missing location or destination. Try again.");
+//						System.out.println("Missing location or destination. Try again.");
+						FailedSearchFrame fail = new FailedSearchFrame();
 					}
 					else {
 						System.out.println(locText + " => " + destText);
