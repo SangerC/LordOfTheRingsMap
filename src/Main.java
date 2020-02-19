@@ -12,6 +12,16 @@ public class Main {
 	Graph graph;
 	WindowFrame windowFrame;
 	
+	public Main() {
+		this.windowFrame = new WindowFrame();
+		this.graph = new Graph();
+	}
+	
+	public void addGraphElement() {
+		getNodesfromText();
+		getEdgesfromText();
+	}
+	
 	public void getNodesfromText() {
 		
 		BufferedReader reader = null;
@@ -43,13 +53,11 @@ public class Main {
 				System.err.println(e.getMessage());
 			}
 		} // end of while
-		
-		getEdgesfromText("EdgeList.txt");
 	}
 	
 	
 	
-	public void getEdgesfromText(String filename) {
+	public void getEdgesfromText() {
 		
 		ArrayList<Graph.Mode> boat = new ArrayList<Graph.Mode>();
 		boat.add(Graph.Mode.BOAT);
@@ -60,7 +68,7 @@ public class Main {
 		
 		BufferedReader reader = null;
 		try {
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream("NodeList.txt")));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream("EdgeList.txt")));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.exit(0);
@@ -103,7 +111,10 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
-		WindowFrame frame = new WindowFrame();
+//		WindowFrame frame = new WindowFrame();
+		
+		Main main = new Main();
+		main.addGraphElement();
 	}
 	
 	
