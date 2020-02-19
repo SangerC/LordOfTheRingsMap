@@ -3,10 +3,10 @@
 973 239 Elvenking'sHall 
 1024 244 Esgaroth 
 1030 229 Dale
-1023 225 TheLonelyMontain
+1023 225 TheLonelyMountain
 790 162 MountGundabad
 708 212 MountGram
-970 273 MountOfMirkwood
+970 273 MountainsOfMirkwood
 520 254 Fornost
 430 260 Annuminas
 186 310 Forlond

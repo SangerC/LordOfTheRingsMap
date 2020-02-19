@@ -1,12 +1,12 @@
 CarnDam MountGundabad Horse
-MountGundabad GreyMontain Horse
+MountGundabad GreyMontains Horse
 MountGundabad MountGram Horse
-GreyMontain Framsburg Boat
-GreyMontain Elvenking'sHall Boat
+GreyMontains Framsburg Boat
+GreyMontains Elvenking'sHall Boat
 Elvenking'sHall Esgaroth Boat 
-Elvenking'sHall MountOfMirkwood Boat
+Elvenking'sHall MountainsOfMirkwood Boat
 Esgaroth Dale Boat
-Dale TheLonelyMontain Boat
+Dale TheLonelyMountain Boat
 Framsburg Inter1 Boat
 Inter1 Rivendell Walk
 Inter1 CarasGaladhon Boat
