@@ -74,7 +74,14 @@ public class Graph {
 	}
 	
 	public void print() {
-		System.out.println(this.nodes);
+		for (String key:nodes.keySet()) {
+			Node n = nodes.get(key);
+			String connList = "";
+			for (Node conn: n.nodes) {
+			connList = connList + conn.name + ", ";
+			}
+			System.out.println(n.name + " is connect to " + connList);
+		}
 		System.out.println(this.path);
 	}
 
