@@ -16,7 +16,7 @@ public class Map {
 	public void readFile() {
 		Scanner scanner = null;
 		try {
-			scanner = new Scanner(new File("C:\\Users\\ritenojb\\CSSE230\\PracticeStuff\\src\\NodeList.txt"));
+			scanner = new Scanner(new File("src\\NodeList.txt"));
 		}
 		catch(FileNotFoundException e){
 			System.out.println("File not found.");
