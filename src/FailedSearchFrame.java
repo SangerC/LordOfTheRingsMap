@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 import javax.swing.border.Border;
 
 public class FailedSearchFrame extends JFrame {
@@ -27,6 +28,7 @@ public class FailedSearchFrame extends JFrame {
 		this.add(Box.createHorizontalStrut(10), BorderLayout.EAST);
 
 		this.pack();
+		this.setResizable(false);
 		Dimension center = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation(center.width/2 - this.getSize().width/2, center.height/2 - this.getSize().height/2);
 		this.setVisible(true);
@@ -40,6 +42,7 @@ public class FailedSearchFrame extends JFrame {
 		Font font = new Font("Times New Roman", Font.PLAIN, 18);
 		message.setFont(font);
 		message.setText("Missing location or destination. Try again.");
+		message.setEditable(false);
 		
 		JButton ok = new JButton("OK");
 		ok.addActionListener(new ActionListener() {

@@ -28,6 +28,8 @@ public class WindowFrame extends JFrame{
 			this.getContentPane().add(BorderLayout.WEST, controlPanel);
 			this.getContentPane().add(mapPanel, BorderLayout.CENTER);
 			this.pack();
+			Dimension center = Toolkit.getDefaultToolkit().getScreenSize();
+			this.setLocation(center.width/2 - this.getSize().width/2, center.height/2 - this.getSize().height/2);
 			this.setVisible(true);
 		}
 }
