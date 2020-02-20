@@ -53,4 +53,8 @@ public class Path {
 	public void setVisible() {
 		this.visible = true;
 	}
+	
+	public void setInvisible() {
+		this.visible = false;
+	}
 }
