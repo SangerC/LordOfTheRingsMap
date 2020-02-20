@@ -22,6 +22,12 @@ public class Graph {
 	
 	
 	public ArrayList<Path> findShortestPath(Node n, Node d, Cost cost){
+		for(String s : nodes.keySet()) {
+			nodes.get(s).cost=-1;
+			nodes.get(s).known=false;
+			nodes.get(s).shortestPath=null;
+		}
+		
 		Node wn = n;
 		wn.cost=0;
 		wn.known=true;
@@ -56,14 +62,11 @@ public class Graph {
 			}
 			wn.known=true;
 		}
-		for(String s : nodes.keySet()) {
-			nodes.get(s).cost=-1;
-			nodes.get(s).known=false;
-			nodes.get(s).shortestPath=null;
-		}
+		
 		for(int i = 0; i < wn.shortestPath.size(); i++) {
 			wn.shortestPath.get(i).setVisible();
 		}
+		
 		return wn.shortestPath;
 	}
 	
