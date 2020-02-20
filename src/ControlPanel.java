@@ -116,7 +116,7 @@ public class ControlPanel extends JPanel {
 						SearchResultFrame result = new SearchResultFrame(locText, destText);
 						Graph.Cost cOrd;
 						
-						if (timeDistance.getSelectedItem()=="Distance") {//TODO:
+						if (timeDistance.getSelectedItem()=="Distance") {
 							cOrd = Graph.Cost.DISTANCE;
 						} else {
 							cOrd = Graph.Cost.TIME;
