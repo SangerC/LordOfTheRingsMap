@@ -14,10 +14,11 @@ public class Path {
 		this.n1 = n1;
 		this.n2 = n2;
 		this.modes = modes;
+		setDist();
 	}
 
-	public void setDist(int dist) {
-		this.distance = dist;
+	public void setDist() {
+		this.distance = (int) Math.sqrt((n1.x - n2.x)*(n1.x - n2.x)+(n1.y - n2.y)*(n1.y - n2.y));
 	}
 
 	public Integer getDist() {

@@ -20,7 +20,7 @@ public class WindowFrame extends JFrame{
 			MapPanel mapPanel = new MapPanel(graph.path);
 			
 			//Create the panel that contains all the navigation controls
-			ControlPanel  controlPanel = new ControlPanel(graph);
+			ControlPanel  controlPanel = new ControlPanel(graph, mapPanel);
 			controlPanel.setLayout(new BoxLayout(controlPanel, BoxLayout.Y_AXIS));
 			controlPanel.setBackground(Color.LIGHT_GRAY);
 		
