@@ -1,4 +1,4 @@
-634 135 CarnDam
+634 135 CarnDum
 832 202 Framsburg 
 973 239 Elvenking'sHall 
 1024 244 Esgaroth 
@@ -35,9 +35,9 @@
 1027 785 MinasMorgul
 1092 762 MountDoom
 1119 746 TheDarkTower
-266 201 BlueMontains
-852 172 GreyMontains
-758 399 MistyMontains
+266 201 BlueMountains
+852 172 GreyMountains
+758 399 MistyMountains
 862 303 Inter1
 947 887 Inter2
 1001 903 Inter3

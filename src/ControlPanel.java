@@ -28,7 +28,7 @@ public class ControlPanel extends JPanel {
 	
 	public ControlPanel(Graph graph, MapPanel panel) {
 		this.addTextFieldsAndLabels();
-		this.addCheckBoxes();
+		//this.addCheckBoxes();
 		this.addComboBoxAndItsItems();
 		this.addAndHandleGoButton();
 		this.graph = graph;
@@ -65,7 +65,7 @@ public class ControlPanel extends JPanel {
 		checkBoxGroup.add(this.walk);
 		checkBoxGroup.add(this.horse);
 		checkBoxGroup.add(this.boat);
-		this.add(Box.createVerticalStrut(150));
+		this.add(Box.createVerticalStrut(200));
 		this.add(this.walk);
 		this.add(this.horse);
 		this.add(this.boat);
@@ -79,7 +79,7 @@ public class ControlPanel extends JPanel {
 		this.timeDistance.addItem("Distance");
 		this.tdLabel.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.timeDistance.setAlignmentX(this.CENTER_ALIGNMENT);
-		this.add(Box.createVerticalStrut(100));
+		this.add(Box.createVerticalStrut(200));
 		this.add(this.tdLabel);
 		this.add(this.timeDistance);
 	}
@@ -115,9 +115,9 @@ public class ControlPanel extends JPanel {
 				}
 			}
 		});
-		this.add(Box.createVerticalStrut(150));
+		this.add(Box.createVerticalStrut(75));
 		this.add(go);
-		this.add(Box.createVerticalStrut(100));
+		this.add(Box.createVerticalStrut(250));
 	}
 	
 }

@@ -1,8 +1,8 @@
-CarnDam MountGundabad Horse
-MountGundabad GreyMontains Horse
+CarnDum MountGundabad Horse
+MountGundabad GreyMountains Horse
 MountGundabad MountGram Horse
-GreyMontains Framsburg Boat
-GreyMontains Elvenking'sHall Boat
+GreyMountains Framsburg Boat
+GreyMountains Elvenking'sHall Boat
 Elvenking'sHall Esgaroth Boat 
 Elvenking'sHall MountainsOfMirkwood Boat
 Esgaroth Dale Boat
@@ -10,7 +10,7 @@ Dale TheLonelyMountain Boat
 Framsburg Inter1 Boat
 Inter1 Rivendell Walk
 Inter1 CarasGaladhon Boat
-Rivendell MistyMontains Walk
+Rivendell MistyMountains Walk
 Rivendell Bree Walk
 Rivendell Tharbad Boat
 Bree Fornost Walk
@@ -22,9 +22,9 @@ MichelDelving GreyHaven Walk
 MichelDelving Tharbad Walk
 GreyHaven Horlond Walk
 GreyHaven Forlond Boat
-GreyHaven BlueMontains Boat
+GreyHaven BlueMountains Boat
 Horlond Forlond Boat
-Forlond BlueMontains Boat
+Forlond BlueMountains Boat
 Tharbad OstInEdhil Boat
 Tharbad LondDaer Boat
 Tharbad Isengard Walk

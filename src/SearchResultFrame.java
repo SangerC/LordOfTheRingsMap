@@ -31,6 +31,7 @@ public class SearchResultFrame extends JFrame {
 		this.add(Box.createHorizontalStrut(10), BorderLayout.EAST);
 
 		this.pack();
+		this.setResizable(false);
 		Dimension center = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation(center.width/2 - this.getSize().width/2, center.height/2 - this.getSize().height/2);
 		this.setVisible(true);
@@ -42,10 +43,10 @@ public class SearchResultFrame extends JFrame {
 		
 		JTextArea message = new JTextArea();
 		message.setBackground(this.getBackground());
-		
-		Font font = new Font("Comic Sans MS", Font.PLAIN, 18);
+		Font font = new Font("Times New Roman", Font.PLAIN, 18);
 		message.setFont(font);
-		message.setText(this.location+" => "+this.destination);
+		message.setText("   "+this.location+" => "+this.destination);
+		message.setEditable(false);
 		
 		JButton ok = new JButton("OK");
 		ok.addActionListener(new ActionListener() {
@@ -57,6 +58,7 @@ public class SearchResultFrame extends JFrame {
 		});
 		
 		panel.add(Box.createVerticalStrut(25));
+		message.setAlignmentX(panel.CENTER_ALIGNMENT);
 		panel.add(message);
 		panel.add(Box.createVerticalStrut(10));
 		ok.setAlignmentX(panel.CENTER_ALIGNMENT);

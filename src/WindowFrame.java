@@ -1,6 +1,9 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,8 +29,39 @@ public class WindowFrame extends JFrame{
 		
 			//Adding the panels to the frame and making the frame visible
 			this.getContentPane().add(BorderLayout.WEST, controlPanel);
-			this.getContentPane().add(mapPanel, BorderLayout.CENTER);
+			
+//			JScrollPane sPane = new JScrollPane(mapPanel);
+//			sPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+//			sPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+//			sPane.setBounds(0, 0, 1200, 750);
+//			sPane.addAncestorListener(new AncestorListener() {
+//			
+//				@Override
+//				public void ancestorAdded(AncestorEvent event) {
+//					JScrollPane sPane = (JScrollPane)event.getComponent();
+//					sPane.applyComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+//				}
+//
+//				@Override
+//				public void ancestorMoved(AncestorEvent event) {
+//					// TODO Auto-generated method stub
+//					
+//				}
+//
+//				@Override
+//				public void ancestorRemoved(AncestorEvent event) {
+//					// TODO Auto-generated method stub
+//					
+//				}
+//			});
+			
+			JPanel layeredPanel = new JPanel();
+			layeredPanel.add(mapPanel);
+			
+			this.getContentPane().add(layeredPanel, BorderLayout.CENTER);
 			this.pack();
+//			Dimension center = Toolkit.getDefaultToolkit().getScreenSize();
+//			this.setLocation(center.width/2 - this.getSize().width/2, center.height/2 - this.getSize().height/2);
 			this.setVisible(true);
 		}
 }
