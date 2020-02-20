@@ -24,12 +24,15 @@ public class ControlPanel extends JPanel {
 	private JLabel destLabel;
 	private JLabel tdLabel;
 	private Graph graph;
+	private MapPanel mappanel;
 	
-	public ControlPanel(Graph graph) {
+	public ControlPanel(Graph graph, MapPanel panel) {
 		this.addTextFieldsAndLabels();
 		this.addCheckBoxes();
 		this.addComboBoxAndItsItems();
 		this.addAndHandleGoButton();
+		this.graph = graph;
+		this.mappanel = panel;
 	}
 	
 	public void addTextFieldsAndLabels() {
@@ -94,9 +97,15 @@ public class ControlPanel extends JPanel {
 					}
 					else {
 						SearchResultFrame result = new SearchResultFrame(locText, destText);
-						//TODO:
-//						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), 
-//								Graph.Mode.WALKING, Graph.Cost.TIME);
+						Graph.Cost cOrd;
+						
+						if (true) {//TODO:
+							cOrd = Graph.Cost.DISTANCE;
+						} else {
+							cOrd = Graph.Cost.TIME;
+						}
+						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), Graph.Cost.TIME);
+						mappanel.repaint();
 						if(walk.isSelected()) {
 							System.out.println("The long way 'round.");
 						}
