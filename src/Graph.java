@@ -35,12 +35,9 @@ public class Graph {
 						if(temp.cost==-1 || fromWN<temp.cost) {
 							temp.cost=fromWN;
 							temp.shortestPath= new ArrayList<Path>();
-							for(Path z: wn.shortestPath) {
-								temp.shortestPath.add(z);
-							}
+							temp.shortestPath.addAll(wn.shortestPath);
 							temp.shortestPath.add(p);
 						}
-						
 					}
 				}
 			}
