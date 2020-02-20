@@ -37,6 +37,10 @@ public class ControlPanel extends JPanel {
 		this.destination = new JTextField(20);
 		this.locLabel = new JLabel("Location");
 		this.destLabel = new JLabel("Destination");
+		this.location.setAlignmentX(this.CENTER_ALIGNMENT);
+		this.destination.setAlignmentX(this.CENTER_ALIGNMENT);
+		this.locLabel.setAlignmentX(this.CENTER_ALIGNMENT);
+		this.destLabel.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.add(Box.createVerticalStrut(200));
 		this.add(locLabel);
 		this.add(location);
@@ -48,6 +52,9 @@ public class ControlPanel extends JPanel {
 		this.walk = new JCheckBox("Walk");
 		this.horse = new JCheckBox("Horse");
 		this.boat = new JCheckBox("Boat");
+		this.walk.setAlignmentX(this.CENTER_ALIGNMENT);
+		this.horse.setAlignmentX(this.CENTER_ALIGNMENT);
+		this.boat.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.walk.setBackground(Color.LIGHT_GRAY);
 		this.horse.setBackground(Color.LIGHT_GRAY);
 		this.boat.setBackground(Color.LIGHT_GRAY);
@@ -67,6 +74,8 @@ public class ControlPanel extends JPanel {
 		this.timeDistance.addItem("(Select time or distance)");
 		this.timeDistance.addItem("Time");
 		this.timeDistance.addItem("Distance");
+		this.tdLabel.setAlignmentX(this.CENTER_ALIGNMENT);
+		this.timeDistance.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.add(Box.createVerticalStrut(100));
 		this.add(this.tdLabel);
 		this.add(this.timeDistance);
@@ -74,17 +83,17 @@ public class ControlPanel extends JPanel {
 	
 	public void addAndHandleGoButton() {
 		this.go = new JButton("GO!");
+		this.go.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.go.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String locText = location.getText();
 				String destText = destination.getText();
 				if(e.getSource()==go) {
 					if(location.getText().isEmpty() || destination.getText().isEmpty()) {
-//						System.out.println("Missing location or destination. Try again.");
 						FailedSearchFrame fail = new FailedSearchFrame();
 					}
 					else {
-						System.out.println(locText + " => " + destText);
+						SearchResultFrame result = new SearchResultFrame(locText, destText);
 						//TODO:
 //						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), 
 //								Graph.Mode.WALKING, Graph.Cost.TIME);
