@@ -8,7 +8,10 @@ public class Graph {
 	public enum Cost {TIME, DISTANCE};
 	public enum Mode {WALKING, HORSE, BOAT};
 	
-	
+	public Graph() {
+		this.nodes = new HashMap<String, Node>();
+		this.path = new ArrayList<Path>();
+	}
 	
 	
 	
@@ -56,6 +59,9 @@ public class Graph {
 			nodes.get(s).known=false;
 			nodes.get(s).shortestPath=null;
 		}
+		for(int i = 0; i < wn.shortestPath.size(); i++) {
+			wn.shortestPath.get(i).setVisible();
+		}
 		return wn.shortestPath;
 	}
 	
@@ -65,6 +71,18 @@ public class Graph {
 		if(mode==Mode.BOAT)return distance;
 		if(mode==Mode.HORSE)return distance*2;
 		else return distance*4;
+	}
+	
+	public void print() {
+		for (String key:nodes.keySet()) {
+			Node n = nodes.get(key);
+			String connList = "";
+			for (Node conn: n.nodes) {
+			connList = connList + conn.name + ", ";
+			}
+			System.out.println(n.name + " is connect to " + connList);
+		}
+		System.out.println(this.path);
 	}
 
 }

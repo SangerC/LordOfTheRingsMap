@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 public class Node {
@@ -27,9 +29,26 @@ public class Node {
 		nodes.add(n);
 //		this.paths.put(n, new Path(this, n));
 	}
+	
+	public void addConnection(Node n, Path p) {
+		this.nodes.add(n);
+		this.paths.add(p);
+	}
 
 	public Boolean checkConnect(Node n) {
 		return (this.nodes.contains(n));
 	}
-
+	
+	public void drawOn(Graphics2D g) {
+		g.setColor(Color.RED);
+		g.fillOval(this.x, this.y, 15, 15);
+	}
+	
+	public int getX() {
+		return this.x;
+	}
+	
+	public int getY() {
+		return this.y;
+	}
 }
