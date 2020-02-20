@@ -27,6 +27,9 @@ public class Graph {
 			nodes.get(s).known=false;
 			nodes.get(s).shortestPath=null;
 		}
+		for(Path p : path) {
+			p.visible=false;
+		}
 		
 		Node wn = n;
 		wn.cost=0;
