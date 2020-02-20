@@ -27,6 +27,7 @@ public class ControlPanel extends JPanel {
 	private MapPanel mappanel;
 	private JComboBox<String> start;
 	private JComboBox<String> end;
+	private JButton tripPlanner;
 	
 	public ControlPanel(Graph graph, MapPanel panel) {
 		this.graph = graph;
@@ -129,9 +130,19 @@ public class ControlPanel extends JPanel {
 				}
 			}
 		});
+		this.tripPlanner = new JButton();
+		this.tripPlanner.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				TripPlanner tripPlanner = new TripPlanner(graph);
+			}
+		});
+		this.tripPlanner.setText("Trip Planner");
+		this.tripPlanner.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.add(Box.createVerticalStrut(75));
 		this.add(go);
 		this.add(Box.createVerticalStrut(250));
+		this.add(tripPlanner);
 	}
 	
 }

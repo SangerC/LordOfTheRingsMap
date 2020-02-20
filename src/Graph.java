@@ -15,12 +15,6 @@ public class Graph {
 		this.path = new ArrayList<Path>();
 	}
 	
-	
-	
-	
-	
-	
-	
 	public ArrayList<Path> findShortestPath(Node n, Node d, Cost cost){
 		for(String s : nodes.keySet()) {
 			nodes.get(s).cost=-1;
