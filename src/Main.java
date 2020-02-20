@@ -13,13 +13,13 @@ public class Main {
 	
 	public Main() {
 		this.graph = new Graph();
+		addGraphElement();
 		this.windowFrame = new WindowFrame(graph);
 	}
 	
 	public void addGraphElement() {
 		getNodesfromText();
 		getEdgesfromText();
-
 	}
 	
 	public void getNodesfromText() {
