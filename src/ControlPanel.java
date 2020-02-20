@@ -25,50 +25,69 @@ public class ControlPanel extends JPanel {
 	private JLabel tdLabel;
 	private Graph graph;
 	private MapPanel mappanel;
+	private JComboBox<String> start;
+	private JComboBox<String> end;
 	
 	public ControlPanel(Graph graph, MapPanel panel) {
-		this.addTextFieldsAndLabels();
-		//this.addCheckBoxes();
-		this.addComboBoxAndItsItems();
-		this.addAndHandleGoButton();
 		this.graph = graph;
 		this.mappanel = panel;
+		this.addTextFieldsAndLabels();
+		this.addComboBoxAndItsItems();
+		this.addAndHandleGoButton();
 	}
 	
 	public void addTextFieldsAndLabels() {
 		this.location = new JTextField(20);
 		this.destination = new JTextField(20);
 		this.locLabel = new JLabel("Location");
-		this.destLabel = new JLabel("Destination");
+		this.destLabel = new JLabel("Destination");		
 		this.location.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.destination.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.locLabel.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.destLabel.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.add(Box.createVerticalStrut(200));
+		
+
+		this.start = new JComboBox<>();
+		for(String s : graph.nodes.keySet()) {
+			this.start.addItem(s);
+		}
+		this.start.setAlignmentX(this.CENTER_ALIGNMENT);
+		
+		this.end = new JComboBox<>();
+		for(String s : graph.nodes.keySet()) {
+			this.end.addItem(s);
+		}
+		this.end.setAlignmentX(this.CENTER_ALIGNMENT);
+		
+		this.location.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				start.removeAllItems();
+				for(String s : graph.nodes.keySet()) {
+					if(s.contains(location.getText()))start.addItem(s);
+				}
+			}		
+		});
+		
+		this.destination.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				end.removeAllItems();
+				for(String s : graph.nodes.keySet()) {
+					if(s.contains(destination.getText()))end.addItem(s);
+				}
+			}		
+		});
+		
 		this.add(locLabel);
 		this.add(location);
+		this.add(start);
 		this.add(destLabel);
 		this.add(destination);
-	}
-	
-	public void addCheckBoxes() {
-		this.walk = new JCheckBox("Walk");
-		this.horse = new JCheckBox("Horse");
-		this.boat = new JCheckBox("Boat");
-		this.walk.setAlignmentX(this.CENTER_ALIGNMENT);
-		this.horse.setAlignmentX(this.CENTER_ALIGNMENT);
-		this.boat.setAlignmentX(this.CENTER_ALIGNMENT);
-		this.walk.setBackground(Color.LIGHT_GRAY);
-		this.horse.setBackground(Color.LIGHT_GRAY);
-		this.boat.setBackground(Color.LIGHT_GRAY);
-		ButtonGroup checkBoxGroup = new ButtonGroup();
-		checkBoxGroup.add(this.walk);
-		checkBoxGroup.add(this.horse);
-		checkBoxGroup.add(this.boat);
-		this.add(Box.createVerticalStrut(200));
-		this.add(this.walk);
-		this.add(this.horse);
-		this.add(this.boat);
+		this.add(end);
 	}
 	
 	public void addComboBoxAndItsItems() {
@@ -89,27 +108,22 @@ public class ControlPanel extends JPanel {
 		this.go.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.go.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String locText = location.getText();
-				String destText = destination.getText();
+				
+				String locText = (String) start.getSelectedItem();
+				String destText = (String) end.getSelectedItem();
+						
 				if(e.getSource()==go) {
-					if(location.getText().isEmpty() || destination.getText().isEmpty()) {
-						FailedSearchFrame fail = new FailedSearchFrame();
-					}
-					else {
 						SearchResultFrame result = new SearchResultFrame(locText, destText);
 						Graph.Cost cOrd;
 						
-						if (true) {//TODO:
+						if (timeDistance.getSelectedItem()=="Distance") {//TODO:
 							cOrd = Graph.Cost.DISTANCE;
 						} else {
 							cOrd = Graph.Cost.TIME;
 						}
-						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), Graph.Cost.TIME);
+						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), cOrd);
 						mappanel.repaint();
-						if(walk.isSelected()) {
-							System.out.println("The long way 'round.");
-						}
-					}
+					
 					location.setText(null);
 					destination.setText(null);
 				}
