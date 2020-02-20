@@ -24,7 +24,7 @@ public class MapPanel extends JPanel{
 //			this.add(node);
 //			node.setLocation(node.getX(), node.getY());
 //		}
-		this.setPreferredSize(new Dimension(1300, 850));
+		this.setPreferredSize(new Dimension(1300, 950));
 	}
 	
 	@Override
