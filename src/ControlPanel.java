@@ -98,7 +98,7 @@ public class ControlPanel extends JPanel {
 		this.timeDistance.addItem("Distance");
 		this.tdLabel.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.timeDistance.setAlignmentX(this.CENTER_ALIGNMENT);
-		this.add(Box.createVerticalStrut(100));
+		this.add(Box.createVerticalStrut(200));
 		this.add(this.tdLabel);
 		this.add(this.timeDistance);
 	}
@@ -129,9 +129,9 @@ public class ControlPanel extends JPanel {
 				}
 			}
 		});
-		this.add(Box.createVerticalStrut(150));
+		this.add(Box.createVerticalStrut(75));
 		this.add(go);
-		this.add(Box.createVerticalStrut(100));
+		this.add(Box.createVerticalStrut(250));
 	}
 	
 }
