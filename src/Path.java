@@ -18,7 +18,7 @@ public class Path {
 	}
 
 	public void setDist() {
-		this.distance = (int) Math.sqrt((n1.x - n2.x)*(n1.x - n2.x)+(n1.y - n2.y)*(n1.y - n2.y));
+		this.distance = (int) (1.8 * Math.sqrt((n1.x - n2.x)*(n1.x - n2.x)+(n1.y - n2.y)*(n1.y - n2.y)));
 	}
 
 	public Integer getDist() {
