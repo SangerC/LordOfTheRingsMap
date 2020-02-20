@@ -3,11 +3,13 @@ import java.util.HashMap;
 
 public class Graph {
 
-	HashMap<String, Node> nodes;
-	ArrayList<Path> path;
 	public enum Cost {TIME, DISTANCE};
 	public enum Mode {WALKING, HORSE, BOAT};
+	private Mode[] modes = {Mode.WALKING, Mode.HORSE, Mode.BOAT};
 	
+	HashMap<String, Node> nodes;
+	ArrayList<Path> path;
+
 	public Graph() {
 		this.nodes = new HashMap<String, Node>();
 		this.path = new ArrayList<Path>();
@@ -19,7 +21,7 @@ public class Graph {
 	
 	
 	
-	public ArrayList<Path> findShortestPath(Node n, Node d, ArrayList<Mode> modes, Cost cost){
+	public ArrayList<Path> findShortestPath(Node n, Node d, Cost cost){
 		Node wn = n;
 		wn.cost=0;
 		wn.known=true;
@@ -28,7 +30,7 @@ public class Graph {
 		while(!d.known) {
 			for(Path p : wn.paths){
 				for(Mode m : modes) {
-					if(p.modes.contains(m)) {
+					if(p.modes.contains(m)){
 						Node temp;
 						if(!p.n1.known) temp = p.n1;
 						else if(!p.n2.known) temp=p.n2;
