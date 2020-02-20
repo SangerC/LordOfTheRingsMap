@@ -28,7 +28,7 @@ public class ControlPanel extends JPanel {
 	
 	public ControlPanel(Graph graph, MapPanel panel) {
 		this.addTextFieldsAndLabels();
-		this.addCheckBoxes();
+		//this.addCheckBoxes();
 		this.addComboBoxAndItsItems();
 		this.addAndHandleGoButton();
 		this.graph = graph;
