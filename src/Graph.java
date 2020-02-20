@@ -76,9 +76,9 @@ public class Graph {
 	private int cost(int distance, Cost cost,Mode mode){
 		if(cost==Cost.DISTANCE)return distance;
 		
-		if(mode==Mode.BOAT)return distance;
-		if(mode==Mode.HORSE)return distance*2;
-		else return distance*4;
+		if(mode==Mode.BOAT)return distance/20;
+		if(mode==Mode.HORSE)return distance/15;
+		else return distance/10;
 	}
 	
 	public void print() {

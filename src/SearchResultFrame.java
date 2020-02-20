@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -12,14 +11,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+
 public class SearchResultFrame extends JFrame {
 
 	private String location;
 	private String destination;
+	private Graph.Cost method;
+	private int cost;
 	
-	public SearchResultFrame(String location, String destination) {
+	public SearchResultFrame(String location, String destination, Graph.Cost method, int cost) {
 		this.location = location;
 		this.destination = destination;
+		this.method = method;
+		this.cost = cost;
 		
 		this.setTitle("Google Middle Earth - Results");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,7 +49,7 @@ public class SearchResultFrame extends JFrame {
 		message.setBackground(this.getBackground());
 		Font font = new Font("Times New Roman", Font.PLAIN, 18);
 		message.setFont(font);
-		message.setText("   "+this.location+" => "+this.destination);
+		message.setText("   "+this.location+" => "+this.destination + "\n   "+this.method.toString()+": "+ getCostString());
 		message.setEditable(false);
 		
 		JButton ok = new JButton("OK");
@@ -67,4 +71,13 @@ public class SearchResultFrame extends JFrame {
 		
 		return panel;
 	}
+	
+	private String getCostString() {
+		String output = "";
+		output += String.valueOf(cost);
+		if(method == Graph.Cost.DISTANCE)output += " Miles";
+		else output += " Days";
+		return output;
+	}
+	
 }

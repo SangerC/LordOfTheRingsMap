@@ -113,7 +113,7 @@ public class ControlPanel extends JPanel {
 				String destText = (String) end.getSelectedItem();
 						
 				if(e.getSource()==go) {
-						SearchResultFrame result = new SearchResultFrame(locText, destText);
+						
 						Graph.Cost cOrd;
 						
 						if (timeDistance.getSelectedItem()=="Distance") {//TODO:
@@ -123,7 +123,7 @@ public class ControlPanel extends JPanel {
 						}
 						graph.findShortestPath(graph.nodes.get(locText), graph.nodes.get(destText), cOrd);
 						mappanel.repaint();
-					
+						SearchResultFrame result = new SearchResultFrame(locText, destText, cOrd, graph.nodes.get(destText).cost);
 					location.setText(null);
 					destination.setText(null);
 				}
