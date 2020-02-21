@@ -35,8 +35,9 @@ public class TripPlanner extends JFrame {
 		this.graph = graph;
 		
 		this.setTitle("Trip Planner");
+
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		
+
 		JPanel panel = displayPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		this.add(Box.createHorizontalStrut(10), BorderLayout.WEST);

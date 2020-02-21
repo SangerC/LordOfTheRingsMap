@@ -19,7 +19,7 @@ public class FailedSearchFrame extends JFrame {
 
 	public FailedSearchFrame() {
 		this.setTitle("Google Middle Earth - Search Failed");
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		JPanel panel = displayPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));

@@ -26,7 +26,7 @@ public class SearchResultFrame extends JFrame {
 		this.cost = cost;
 		
 		this.setTitle("Google Middle Earth - Results");
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		JPanel panel = displayPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
