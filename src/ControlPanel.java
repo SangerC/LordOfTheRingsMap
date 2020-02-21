@@ -15,9 +15,6 @@ public class ControlPanel extends JPanel {
 	
 	private JTextField location;
 	private JTextField destination;
-	private JCheckBox walk;
-	private JCheckBox horse;
-	private JCheckBox boat;
 	private JComboBox<String> timeDistance;
 	private JButton go;
 	private JLabel locLabel;
