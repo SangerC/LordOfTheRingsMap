@@ -141,7 +141,7 @@ public class ControlPanel extends JPanel {
 		this.tripPlanner.setAlignmentX(this.CENTER_ALIGNMENT);
 		this.add(Box.createVerticalStrut(75));
 		this.add(go);
-		this.add(Box.createVerticalStrut(250));
+		this.add(Box.createVerticalStrut(50));
 		this.add(tripPlanner);
 	}
 	
