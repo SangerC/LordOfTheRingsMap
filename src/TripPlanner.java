@@ -25,7 +25,7 @@ public class TripPlanner extends JFrame {
 		this.graph = graph;
 		
 		this.setTitle("Trip Planner");
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = displayPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
